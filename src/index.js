@@ -16,21 +16,45 @@ function bar() {
   } while (delay > 100);
 }
 
-function foo() {
+function longerProcessingTime() {
   document.getElementById("text").innerText = "started";
   console.log("Started");
-  for (let i = 0; i < 1000; i += 1) {
+  for (let i = 0; i < 10000; i += 1) {
     bar();
   }
   console.log("Ended");
   document.getElementById("text").innerText = "ended, lets start again";
 }
-window.foo = foo;
+
+function continuouslyRendering() {
+  for (let i = 0; i < 100000; i += 1)
+    document.getElementById("text").innerText =
+      "started " + Math.random() * 1000;
+}
+
+function generateLargeData() {
+  const data = Array(1000000).fill(0);
+  const newData = data.map((i) => ({
+    id: i,
+    name: "name_" + i
+  }));
+  console.log(newData);
+  document.getElementById("text").innerText = "done";
+}
+
+window.longerProcessingTime = longerProcessingTime;
+window.continuouslyRendering = continuouslyRendering;
+window.generateLargeData = generateLargeData;
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
 <div>
-  <button onclick="foo()"> clickme </button>
+  <button onclick="longerProcessingTime()"> Code contiuously running for longtime </button>
+  <br>
+  <button onclick="continuouslyRendering()"> Code contiuously rendering </button>
+  <br>
+  <button onclick="generateLargeData()"> Code generating huge data </button>
+
   <p id='text'>
   click above button to start
   </p>
