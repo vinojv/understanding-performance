@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  text-transform: uppercase;
 }
 
 button {
@@ -8,4 +9,5 @@ button {
   border: 1px solid #83979f;
   background-color: #c8d7db;
   border-radius: 4px;
+  text-transform: capitalize;
 }
