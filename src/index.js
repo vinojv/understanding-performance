@@ -1,5 +1,13 @@
 import "./styles.css";
 
+/**
+ * Performance issues
+ * 1. Code taking long time to finish blocking code
+ * 2. Code trying to keep rendering some part of the screen without releasing UI thread
+ * 3. Code storing / generating huge data and processing them
+ *
+ */
+
 function bar() {
   let delay = Math.random() * 100;
   do {
