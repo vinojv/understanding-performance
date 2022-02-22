@@ -47,7 +47,7 @@ window.continuouslyRendering = continuouslyRendering;
 window.generateLargeData = generateLargeData;
 
 document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
+<h1>Understanding how to debug performance!</h1>
 <div>
   <button onclick="longerProcessingTime()"> Code contiuously running for longtime </button>
   <br>
