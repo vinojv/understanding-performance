@@ -10,4 +10,5 @@ button {
   background-color: #c8d7db;
   border-radius: 4px;
   text-transform: capitalize;
+  cursor: pointer;
 }
